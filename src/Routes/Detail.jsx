@@ -1,5 +1,5 @@
 import React from 'react'
-
+import  '../index.css'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 

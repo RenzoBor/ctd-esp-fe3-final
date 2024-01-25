@@ -120,3 +120,11 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+.error{
+  color: red;
+  border: red solid 1px;
+  font-weight: 600;
+  margin: 20px;
+  width:fit-content;
+  padding: 3px;
+}
