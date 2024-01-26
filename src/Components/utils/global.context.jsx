@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
-export const initialState = {theme: "", data: []}
+export const initialState = {theme: "light", data: []}
 export const DataContext = createContext(undefined);
 
 
@@ -8,6 +8,8 @@ const dataReducer = (state, action) => {
   switch (action.type) {
     case 'SET_DATA':
       return { ...state, data: action.payload};
+      case 'TOGGLE_THEME':
+      return { ...state, theme: state.theme === 'light' ? 'dark' : 'light' };
     default:
       return state;
   }

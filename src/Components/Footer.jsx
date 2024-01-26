@@ -4,8 +4,7 @@ import '../index.css'
 const Footer = () => {
   return (
     <footer>
-        <p>Powered by</p>
-        <img src="../../public/images/DH.png" alt='DH-logo' />
+        <p>Page made by Renzo Borraccini</p>
     </footer>
   )
 }
