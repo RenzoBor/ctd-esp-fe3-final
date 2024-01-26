@@ -17,8 +17,8 @@ function App() {
             <Route path="/" element= {<Home/>} />
             <Route path="contact" element= {<Contact/>} />
             <Route path="favs" element={<Favs/>}/>
+            <Route path="detail/:id" element={<Detail/>}/>
             <Route path="*" element={<p className="error">Page not found</p>}/>
-            <Route path="" element=""/>
           </Routes>
           </BrowserRouter>
           <Footer/>
