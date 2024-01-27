@@ -1,8 +1,6 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
-export const initialState = {theme: "light", data: []}
-export const DataContext = createContext(undefined);
 
-
+export const initialState = {theme: "light", data: [],idFavs:[]}
 
 const dataReducer = (state, action) => {
   switch (action.type) {
@@ -10,6 +8,8 @@ const dataReducer = (state, action) => {
       return { ...state, data: action.payload};
       case 'TOGGLE_THEME':
       return { ...state, theme: state.theme === 'light' ? 'dark' : 'light' };
+      case 'ADD_FAV':
+        return {...state, idFavs: [...state.idFavs, action.payload]}
     default:
       return state;
   }
@@ -31,6 +31,7 @@ const fetchData = async (dispatch) => {
     console.log(error); ;
   }
 };
+export const DataContext = createContext(undefined);
 
 const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
@@ -39,7 +40,7 @@ const DataProvider = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ state }}>
+    <DataContext.Provider value={{ state , dispatch }}>
       {children}
     </DataContext.Provider>
   );

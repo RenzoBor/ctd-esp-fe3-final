@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import  '../index.css';
-
+import { useDataContext } from './utils/global.context';
 const Form = () => {
   const [name, setName] = useState("");
   const [mail, setMail] =useState("");
   const [error, setError] = useState([])
+  const {state} = useDataContext();
   //Aqui deberan implementar el form completo con sus validaciones
   function handleName(e) {
     setName(e.target.value)
@@ -27,7 +28,7 @@ const Form = () => {
   } else {setError(<p>Gracias por registrarte {name}, nos contactaremos con usted en la brevedad.</p>)}
   }
   return (
-    <div>
+    <div className={state.theme === 'dark' ? 'dark' : "light"} >
       <form onSubmit={manageSubmit}>
         <input type="text"  placeholder="Your name" onChange={handleName}/>
         <input type="email"  placeholder="Your email" onChange={handleMail}/>

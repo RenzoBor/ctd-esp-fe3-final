@@ -2,8 +2,9 @@ import React from 'react'
 import  '../index.css'
 import { useEffect, useState } from 'react';
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
+//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+/*AL AGREGAR LAS CLASES A ESTE COMPONENTE ME DEJA DE RENDERIZAR LAS TARJETAS POR ALGUNA RAZON, POR ESO NO LOGRE APLICARLE EL TEMA A ESTE COMPONENTE*/
 const Detail = () => {
   const [data,setData] = useState({})
   const [id,setId] = useState()
@@ -33,15 +34,13 @@ const Detail = () => {
     fetchData();
   });
   return (
-    <>
+    <div> {/*AL AGREGAR LAS CLASES A ESTE COMPONENTE ME DEJA DE RENDERIZAR LAS TARJETAS POR ALGUNA RAZON, POR ESO NO LOGRE APLICARLE EL TEMA A ESTE COMPONENTE*/}
       <h1>Detail Dentist id {data.id} </h1>
       <table>
         <thead><th>Name</th><th>Email</th><th>Phone number</th><th>Website</th></thead>
         <tr><td>{data.name}</td><td>{data.email}</td><td>{data.phone}</td><td>{data.website}</td></tr>
       </table>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-    </>
+    </div>
   )
 }
 
